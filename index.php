@@ -82,25 +82,27 @@ info@templatebaker.com
 </div>
 <div class="tb-content-bg" id="what">
     <div class="container">
-        <div class="row">
+                <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Qu'est-ce que le MSGU ?</h2>
+                <h2>MSGU</h2>
                 <span class="tb-underline-white"> </span>
-                <h3>make a type specimen book</h3>
-                <div class="tb-steps">
-                    <div class="tb-steps-row">
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps">1</a>
-                        </div>
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps2">2</a>
-                        </div>
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps2">3</a>
-                        </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3> Qu'est-ce que le MSGU ? </h3>
+                        <p>C'est utiliser les médias sociaux pour aider les gens en cas d'urgence.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3> Comment ça marche ? </h3>
+                        <p>
+Sais tu que de nombreuse personnes regardent ce que les gens écrivent sur les réseaux sociaux ? Ces personnes cherchent des informations utiles quand un événement grave se produit.
+En envoyant un message au bon endroit, on peut informer ces personnes qui vont ensuite s'organiser pour venir en aide aux personnes en danger.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3> Pourquoi utiliser les réseaux sociaux ? </h3>
+                        <p>Aujourd'hui, tout le monde utilise les réseaux sociaux. Grâce a eux, on peut facilement et rapidement s'informer.</p>
                     </div>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                
                 <a href="#" class="btn tb-btn-bb">Learn More</a>
             </div>
         </div>

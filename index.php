@@ -15,6 +15,18 @@ SUPPORT
 info@templatebaker.com
 
 -->
+<?php
+if(isset($_GET['side'])) {
+    if($_GET['side'] == 'light') {
+        setcookie('side', 'light', time() + 365*24*3600, null, null, false, true);
+    }
+    elseif($_GET['side'] == 'dark') {
+        setcookie('side', 'dark', time() + 365*24*3600, null, null, false, true);
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,18 +66,19 @@ info@templatebaker.com
                 </div>
             </div>
         </nav>
+        
 
 <div id="tb-imagebg"></div>
 <div class="tb-content">
     <div class="container">
        <div class="row" style="text-align:center;">
     <div class="col-md-4">
-        <img src="img/sabre_light.png" />
+        <a href="?side=light"><img src="img/sabre_light.png" /></a>
     </div>
     <div class="col-md-4">
-        <h1>STAR WARS</h1></div>
+        <h1>STAR WARS</h1> <p>T'es du côté <?php echo $_COOKIE['side']; ?>, PD ! </p></div>
     <div class="col-md-4">
-        <img src="img/sabre_dark.png" />
+        <a href="?side=dark"><img src="img/sabre_dark.png" /></a>
     </div>
 </div>
             

@@ -22,6 +22,17 @@ info@templatebaker.com
     src: local('StarWars'), url(../fonts/starwars.woff) format('woff');
 }
 
+ul.nav.navbar-nav > li > a {
+    font-size:16px;
+    font-family: 'StarWars';
+    text-transform: uppercase;
+}
+
+ul.nav.navbar-nav > li {
+    margin-left:10px;
+    margin-right: 10px;
+}
+
 h1 {
     font-family: 'StarWars', sans-serif;
     text-transform: uppercase;

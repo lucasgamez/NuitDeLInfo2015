@@ -15,8 +15,15 @@ SUPPORT
 info@templatebaker.com
 
 */
+@font-face {
+    font-family: 'StarWars';
+    font-style: normal;
+    font-weight: 400;
+    src: local('StarWars'), url(../fonts/starwars.woff) format('woff');
+}
+
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'StarWars', sans-serif;
     text-transform: uppercase;
     font-size: 48px;
     color: #fff;
@@ -36,7 +43,7 @@ h3 {
 }
 p {
     font-family: 'Lato', sans-serif;
-    color: #fff;
+    color: #eee;
 }
 a {
     color: #eb4847;
@@ -45,7 +52,7 @@ a:hover {
     color: #eb4847;
 }
 #tb-imagebg {
-    background: #fff url('../img/tb-bg.jpg') top left;
+    background: #fff url('../img/tb-bg2.jpg') top left;
     background-attachment: scroll;
     background-position: center center;
     background-repeat: none;
@@ -69,7 +76,7 @@ a:hover {
     color: #888;
     position: relative;
     z-index: 2;
-    background-color: #eb4847;
+    background-color: #2b2a2a;
     padding: 250px 0;
 }
 .tb-footer {

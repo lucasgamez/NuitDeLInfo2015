@@ -90,7 +90,7 @@ if(isset($_GET['side'])) {
         <a href="?side=light"><img src="img/sabre_light.png" /></a>
     </div>
     <div class="col-md-4">
-        <h1>Ma bite.</h1> <p>T'es du côté <?php echo $_COOKIE['side']; ?>, PD ! </p></div>
+        <h1>Ma bite.</h1></div>
     <div class="col-md-4">
         <a href="?side=dark"><img src="img/sabre_dark.png" /></a>
     </div>

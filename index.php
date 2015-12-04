@@ -198,7 +198,7 @@ if($_COOKIE['side'] == 'light') {
         </div>
     </div>
 </div>
-<div class="tb-content">
+<div class="tb-content img-side">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center tb-footer">

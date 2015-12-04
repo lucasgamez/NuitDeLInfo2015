@@ -101,11 +101,8 @@ if(isset($_GET['side'])) {
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-<<<<<<< HEAD
                 <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
-=======
-                <a href="index.php?#msgu" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
->>>>>>> 223af11f6a01e3aefc3c0b7677526f480b659101
+
             </div>
         </div>
             
@@ -142,9 +139,11 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
 <div class="tb-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2>It was popularised in the 1960s with the release of Letraset sheets containing Lorem</h2>
-                <a href="#" class="btn tb-btn-bbg">Learn More</a>
+            <div class="col-md-6">
+                <img src="img/logo500x500.png">
+            </div>
+            <div class="col-md-6">
+                <h3 class="bulle"> Bonjour, je suis GoodSlam, le justicier intergalactique </h3>
             </div>
         </div>
     </div>

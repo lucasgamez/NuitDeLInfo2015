@@ -101,15 +101,19 @@ if(isset($_GET['side'])) {
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
+<<<<<<< HEAD
                 <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+=======
+                <a href="index.php?#msgu" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+>>>>>>> 223af11f6a01e3aefc3c0b7677526f480b659101
             </div>
         </div>
             
     </div>
 </div>
-<div class="tb-content-bg" id="what">
+<div class="tb-content-bg" id="msgu">
     <div class="container">
-                <div class="row">
+        <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>MSGU</h2>
                 <span class="tb-underline-white"> </span>
@@ -151,21 +155,18 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
             <div class="col-lg-12 text-center">
                 <h2>Moi et le MSGU</h2>
                 <span class="tb-underline-white"> </span>
-                <h3>make a type specimen book</h3>
-                <div class="tb-steps">
-                    <div class="tb-steps-row">
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps">1</a>
-                        </div>
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps">2</a>
-                        </div>
-                        <div class="tb-step-body">
-                            <a href="#" class="btn tb-btn-steps2">3</a>
-                        </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>Grâce aux MSGU, tu auras les informations pour te préparer à affronter des situations d’urgences, mais aussi tu sauras quoi faire pendant ces situations en adoptant les gestes de sécurité.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+Toi aussi tu peux aider les gens. Ce n’est pas compliqué : il suffit de prendre une photo ou  de poster un commentaire sur les réseaux sociaux avec tes parents. Ainsi tu informeras les autres internautes de la situation en temps réelle mais surtout les secours pourront mieux intervenir sur le terrain.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>En tant que citoyen, tu seras capable d’aider tes amis, ta famille, tes camarades mais surtout tous ceux qui seront près de toi : tu deviendras un héros !</p>
                     </div>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 <a href="#" class="btn tb-btn-bb">Learn More</a>
             </div>
         </div>

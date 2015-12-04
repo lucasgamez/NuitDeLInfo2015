@@ -20,9 +20,10 @@
     ?>
 						
                         <li><a href="index.php">Accueil</a></li>
-                        <li><a href="index.php?#what">Qu'est-ce que le MSGU ?</a></li>
+                        <li><a href="index.php?#what">MSGU</a></li>
                         <li><a href="index.php?#me">Moi et le MSGU</a></li>
-                        <li><a href="index.php?#play">Les Jeux</a></li>
+                        <li><a href="index.php?#info">Pour en savoir plus</a></li>
+                        <li><a href="index.php?#play">Le Jeu</a></li>
                         <li><a href="credits.php">Crédits</a></li>
                     </ul>
                 </div>

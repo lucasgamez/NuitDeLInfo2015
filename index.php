@@ -16,6 +16,11 @@ info@templatebaker.com
 
 -->
 <?php
+if(!isset($_COOKIE['side'])) {
+    setcookie('side', 'light', time() + 365*24*3600, null, null, false, true);
+    $_COOKIE['side'] = 'light';
+}
+
 if(isset($_GET['side'])) {
     if($_GET['side'] == 'light') {
         setcookie('side', 'light', time() + 365*24*3600, null, null, false, true);
@@ -53,9 +58,6 @@ if(isset($_GET['side'])) {
     elseif($_COOKIE['side'] == 'dark') {
         echo '<link rel="stylesheet" href="css/dark.css">';
     }
-    else {
-        echo '<link rel="stylesheet" href="css/neutral.css">';
-    }
     ?>
 </head>
 <body>
@@ -84,7 +86,7 @@ if (file_exists($filename)) include($filename);
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-                <a href="?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+                <a href="#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
             </div>
         </div>
             

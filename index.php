@@ -84,12 +84,7 @@ if (file_exists($filename)) include($filename);
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-<<<<<<< HEAD
                 <a href="?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
-=======
-                <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
-
->>>>>>> 8ff781f0d18dc9b3d3a4c5afd9a3f2b6fb4f882a
             </div>
         </div>
             

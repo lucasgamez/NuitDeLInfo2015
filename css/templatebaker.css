@@ -47,6 +47,15 @@ p {
     text-align: justify;
 }
 
+#follow_guide {
+    position:fixed;
+    top:150px;
+    left:10px;
+    width:140px;
+    height:140px;
+    background-color:black;
+}
+
 h1 {
     font-family: 'StarWars', sans-serif;
     text-transform: uppercase;

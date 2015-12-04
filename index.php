@@ -40,11 +40,19 @@ if(isset($_GET['side'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nuit de l'info 2015</title>
+    <title>MSGU Junior</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link href="css/templatebaker.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <?php
+    if($_COOKIE['side'] == 'light') {
+        echo '<link rel="icon" type="image/png" href="img/light_icon.png" />';
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        echo '<link rel="icon" type="image/png" href="img/mchant_icon.png" />';
+    }
+    ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,6 +73,19 @@ if(isset($_GET['side'])) {
 $filename = "menu.php";
 if (file_exists($filename)) include($filename);
 ?>
+       
+<!-- Le guide intergalactique -->
+<div id="follow_guide">
+   <?php
+    if($_COOKIE['side'] == 'light') {
+        echo '<img src="img/logo140.png" alt="Le guide" />';
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        echo '<img src="img/mchant140.png" alt="Le guide" />';
+    }
+    ?>
+    
+</div>
         
 
 <div id="tb-imagebg"></div>
@@ -75,7 +96,7 @@ if (file_exists($filename)) include($filename);
         <a href="?side=light"><img class="img_light" src="img/sabre_light.png" /></a>
     </div>
     <div class="col-xs-4">
-        <h1>Ma bite.</h1></div>
+        <h1>MSGU Junior</h1></div>
     <div class="col-xs-4">
         <a href="?side=dark"><img class="img_dark" src="img/sabre_dark.png" /></a>
     </div>

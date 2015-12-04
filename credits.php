@@ -155,7 +155,7 @@ info@templatebaker.com
                     </div>
                 </div>
                 <h3>Le contenu</h3>
-                <p>Après de nombreux redécoupage d'informations de part et d'autre, c'est finalement notre imagination débordante qui a pris le dessus sur le contenu fourni sur ce site. Ne soyez pas enviez, on vous l'offre !</p>
+                <p>Après de nombreux redécoupage d'informations de part et d'autre, c'est finalement notre imagination débordante qui a pris le dessus sur le contenu fourni sur ce site. Ne soyez pas envieux, on vous l'offre !</p>
             </div>
         </div>
     </div>

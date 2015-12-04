@@ -84,7 +84,12 @@ if (file_exists($filename)) include($filename);
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
+<<<<<<< HEAD
                 <a href="?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+=======
+                <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+
+>>>>>>> 8ff781f0d18dc9b3d3a4c5afd9a3f2b6fb4f882a
             </div>
         </div>
             
@@ -121,19 +126,11 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
 <div class="tb-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-<?php
-if($_COOKIE['side'] == 'light') {
-        echo '<img src="img/yoda.png" alt="" />';
-    }
-    elseif($_COOKIE['side'] == 'dark') {
-        echo '<img src="" alt="img/darkvador.png" />';
-    }
-    else {
-        echo '<img src="" alt="" />';
-    }
-?>
-                <a href="#" class="btn tb-btn-bbg">Learn More</a>
+            <div class="col-md-6">
+                <img src="img/logo500x500.png">
+            </div>
+            <div class="col-md-6">
+                <h3 class="bulle"> Bonjour, je suis GoodSlam, le justicier intergalactique </h3>
             </div>
         </div>
     </div>

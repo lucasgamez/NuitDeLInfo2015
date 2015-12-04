@@ -46,6 +46,7 @@ info@templatebaker.com
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+						<li><a href="#"onclick="compteclick()"><img src="img/DarthVader.png" /></a></li>
                         <li><a href="index.php?#what">Qu'est-ce que le MSGU ?</a></li>
                         <li><a href="index.php?#me">Moi et le MSGU</a></li>
                         <li><a href="index.php?#play">Les Jeux</a></li>
@@ -200,5 +201,16 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/parallax.js"></script>
+<script>
+clics = 0; 
+	
+function compteclick() {
+	clics ++ ;
+	if(clics == 10){
+		window.open("EASTEREGGstarwars/index.html");
+		clics = 0;
+	}
+}
+</script>
 </body>
 </html>

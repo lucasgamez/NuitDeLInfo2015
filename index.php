@@ -147,7 +147,7 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
                 <img src="img/<?php if($_COOKIE['side'] == 'light') {?>logo500x500.png <?php } else {?>mchant500x500.png <?php }?>">
             </div>
             <div class="col-md-6">
-                <h3 class="bulle"> Bonjour, je suis <?php if($_COOKIE['side'] == 'light') {?>GoodSlam, le justicier intergalactique<?php } else {?>BadSlam, le vilain de la galaxie<?php }?>  </h3>
+                <h3 class="bulle"> Bonjour, je suis <?php if($_COOKIE['side'] == 'light') {?>Obi wan keno slam, le justicier intergalactique<?php } else {?>DarkSlam, le vilain de la galaxie et frère de Obi wan keno slam<?php }?>  </h3>
             </div>
         </div>
     </div>

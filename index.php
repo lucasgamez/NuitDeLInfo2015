@@ -101,7 +101,7 @@ if(isset($_GET['side'])) {
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-                <a href="index.html?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+                <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
             </div>
         </div>
             
@@ -211,10 +211,11 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center tb-footer">
-                <ul class="list-inline">
-                    <li>&copy; heavenward</li>
+                <ul class="list-inline" style="color:black;">
+                    <li>&copy; heavenward Remix by Champo-Team (Nous quoi)</li>
                     <li>|</li>
-                    <li class="tb-copyright">Proudly created by: <a target="_blank" rel="nofollow" href="http://www.templatebaker.com">TemplateBaker</a></li>
+                    <li class="tb-copyright">Proudly created by: <a target="_blank" rel="nofollow" href="http://www.templatebaker.com">TemplateBaker</a></li><br /><br /><br /> <!-- Oui, je sais, c'est sale... -->
+                    <li><img src="img/nuitinfo_2015.png"></li>
                 </ul>
             </div>
         </div>

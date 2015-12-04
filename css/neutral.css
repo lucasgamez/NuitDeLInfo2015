@@ -1,1 +1,5 @@
 /* Côté neutre */
+
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    background-color:pink;
+}

@@ -19,3 +19,26 @@ ul.nav.navbar-nav > li > a {
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
+
+.bulle {
+    padding: 5px 3px 4px 10px;
+    background: rgba(255, 0, 0, 0.6); /* ie 6,7,8 */
+    background: rgba(255, 0, 0, 0.6);
+    position: relative;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;   
+    margin-top: 15%;
+}
+
+.bulle:after {
+    content:"";
+    position: absolute;
+    right: 100%;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 12px solid rgba(255, 0, 0, 0.6);
+    border-bottom: 6px solid transparent; 
+}

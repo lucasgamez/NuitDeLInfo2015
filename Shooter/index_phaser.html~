@@ -1,0 +1,238 @@
+<html>
+
+	<head>
+		<title>pixi.js example 1</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #123456;
+			}
+		</style>
+		<script src="phaser.js"></script>
+	</head>
+
+	<body>
+	<div id="test" align="center">
+
+		<script>
+			var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+			
+			function preload() {
+				game.load.image('player', 'ship.png');
+				game.load.image('back', '1.jpg');
+				game.load.image('mid', '2.jpg');
+				game.load.image('top', '3.jpg');
+				game.load.image('asteroide', 'asteroide.png');
+				game.load.image('balle','tir.jpg');
+
+			}
+
+			var cursors;
+			var currentSpeed = 0;
+
+			/*var parallaxback = [];
+			var parallaxmid = [];
+			var parallaxtop = [];
+			*/
+
+			var asteroide = [];
+			var asteoX = 110;
+			var asteoY = 113;
+			var sprite;
+			var balle;
+			var tir;
+
+			function create() {
+
+				initAsteo();
+
+
+			    //  This will run in Canvas mode, so let's gain a little speed and display
+				game.renderer.clearBeforeRender = false;
+    			game.renderer.roundPixels = true;
+
+    			//  We need arcade physics
+    			game.physics.startSystem(Phaser.Physics.ARCADE);
+				
+				//  Our player ship
+				sprite = game.add.sprite(300, 300, 'player');
+				sprite.anchor.set(0.5);
+
+
+				//  and its physics settings
+				game.physics.enable(sprite, Phaser.Physics.ARCADE);
+
+				sprite.body.drag.set(100);
+				
+				sprite.body.maxVelocity.set(200);
+
+				//  Game input
+				cursors = game.input.keyboard.createCursorKeys();
+				tir = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+
+
+				cursors = game.input.keyboard.createCursorKeys();
+			}
+
+			function update() {
+
+
+				if (cursors.left.isDown)
+					{
+						//deplacementPara(currentSpeed);
+						sprite.angle -= 4;
+						//console.log(sprite.angle);
+					}
+					else if (cursors.right.isDown)
+					{
+						//deplacementPara(currentSpeed);
+						sprite.angle += 4;
+						//console.log(sprite.angle);
+					}else if (tir.isDown){
+						tirB();
+					}
+
+					if (cursors.up.isDown)
+					{
+						//  The speed we'll travel at
+						//deplacementPara(currentSpeed);
+						currentSpeed = 300;
+					}
+					else
+					{
+						if (currentSpeed > 0)
+						{
+							currentSpeed -= 4;
+						}
+					}
+
+					if (currentSpeed > 0)
+					{
+						//deplacementPara(currentSpeed);
+						game.physics.arcade.velocityFromRotation(sprite.rotation, currentSpeed, sprite.body.velocity);
+						
+					}
+
+				screenWrap(sprite);
+				game.physics.arcade.collide(sprite, asteroide[0]);
+				game.physics.arcade.collide(sprite, asteroide[1]);
+				game.physics.arcade.collide(sprite, asteroide[2]);
+				game.physics.arcade.collide(sprite, asteroide[3]);
+
+				
+			}
+
+			function render(){
+				
+			}
+
+			
+
+			function initAsteo(){
+			
+				var pos_x = Math.floor((Math.random() * 400-asteoX) + asteoX)/2;
+				var pos_y = Math.floor((Math.random() * 300-asteoX) + asteoX)/2;
+				
+				var pos_x1 = Math.floor((Math.random() * 800-asteoX) + 400+asteoX)/1.75;
+				var pos_y1 = Math.floor((Math.random() * 300-asteoX) + asteoX)/1.75;
+				
+				var pos_x2 = Math.floor((Math.random() * 400-asteoX) + asteoX)/2;
+				var pos_y2 = Math.floor((Math.random() * 600-asteoX) + 300+asteoX)/2;
+				
+				var pos_x3 = Math.floor((Math.random() * 800-asteoX) + 400+asteoX)/1.75;
+				var pos_y3 = Math.floor((Math.random() * 600-asteoX) + 300+asteoX)/1.75;
+
+				asteroide.push(game.add.sprite(pos_x,pos_y,'asteroide'));
+				asteroide.push(game.add.sprite(pos_x1,pos_y1,'asteroide'));
+				asteroide.push(game.add.sprite(pos_x2,pos_y2,'asteroide'));
+				asteroide.push(game.add.sprite(pos_x3,pos_y3,'asteroide'));
+				game.physics.enable(asteroide[0], Phaser.Physics.ARCADE);
+				game.physics.enable(asteroide[1], Phaser.Physics.ARCADE);
+				game.physics.enable(asteroide[2], Phaser.Physics.ARCADE);
+				game.physics.enable(asteroide[3], Phaser.Physics.ARCADE);
+
+				asteroide[0].body.immovable = true;
+				asteroide[1].body.immovable = true;
+				asteroide[2].body.immovable = true;
+				asteroide[3].body.immovable = true;
+
+
+
+				
+
+			}
+
+			function screenWrap(sprite) {
+
+				if (sprite.x < 0)
+				{
+					sprite.x = game.width;
+				}
+				else if (sprite.x > game.width)
+				{
+					sprite.x = 0;
+				}
+
+				if (sprite.y < 0)
+				{
+					sprite.y = game.height;
+				}
+				else if (sprite.y > game.height)
+				{
+					sprite.y = 0;
+				}
+
+			}
+
+			function tirB(){
+				tir.reset(sprite.x, sprite.y + 10);
+				tir.body.velocity.y = -400;
+			}
+
+			/*//creation du parallax
+			function initPara(){
+				
+				for(var i = 0; i < 100 ; i++){
+					//var p_X = Math.floor((Math.random() * 800) + 1);
+					//var p_Y = Math.floor((Math.random() * 600) + 1);
+					parallaxback.push(game.add.sprite(Math.floor((Math.random() * 800) + 1),Math.floor((Math.random() * 600) + 1), 'back'));
+					//parallaxback[i].anchor.set(0.5);
+					parallaxmid.push(game.add.sprite(Math.floor((Math.random() * 800) + 1),Math.floor((Math.random() * 600) + 1), 'mid'));
+					//parallaxmid[i].anchor.set(0.5);
+					parallaxtop.push(game.add.sprite(Math.floor((Math.random() * 800) + 1),Math.floor((Math.random() * 600) + 1), 'top'));
+					//parallaxtop[i].anchor.set(0.5);
+				}
+			}*/
+
+			/*//deplacement des étoiles
+			function deplacementPara(position){
+				for(var i = 0; i < 100 ; i++){
+					//var p_X = Math.floor((Math.random() * 800) + 1);
+					//var p_Y = Math.floor((Math.random() * 600) + 1);
+					//game.physics.arcade.velocityFromRotation(parallaxback[i].rotation, currentSpeed-2, parallaxback[i].body.velocity);
+					//parallaxback[i].anchor.set(0.5);
+					//game.physics.arcade.velocityFromRotation(parallaxmid[i].rotation, currentSpeed-1, parallaxmid[i].body.velocity);
+					//parallaxmid[i].anchor.set(0.5);
+					//game.physics.arcade.velocityFromRotation(parallaxtop[i].rotation, currentSpeed, parallaxtop[i].body.velocity);
+					//parallaxtop[i].anchor.set(0.5);
+					
+					if(position == 1) // monte
+					parallaxback[i].position.x += 1;
+					parallaxmid[i]..position.x += 1;
+					parallaxtop[i]..position.x += 1;
+
+				}
+			}*/
+
+
+
+		</script>
+</div>
+
+
+	</body>
+
+
+</html>

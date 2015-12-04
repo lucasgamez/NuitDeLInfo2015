@@ -92,15 +92,15 @@ info@templatebaker.com
                     </div>
                     <div class="col-lg-4">
                         <ul style="text-align:left; font-size:20px;">
-                           <li>Mehdi Slamnia Hé!hé!</li>
-                           <li>Chilan-Eli Y-manque-du(uk)sel</li>
-                           <li>Lucas Ga-Metz</li>
-                           <li>Victor P(as)-inquiet</li>
-                           <li>Quentin "JK" Lacoste "Crocodile"</li>
-                           <li>Mehdi Dje<strike>mai</strike>di</li>
-                           <li>JB Cu(eil)lié(z)</li>
-                           <li>Léa Froment-Mazet(ltov)</li>
-                           <li>Jérémie "Gach"-(b)elin</li>
+                           <li>Mehdi Slamnia</li>
+                           <li>Chilan-Eli Yuksel</li>
+                           <li>Lucas Gamez</li>
+                           <li>Victor Pinquier</li>
+                           <li>Quentin Lacoste</li>
+                           <li>Mehdi Djemai</li>
+                           <li>J-B Culié</li>
+                           <li>Léa Froment-Mazet</li>
+                           <li>Jérémie Gachelin</li>
                        </ul>
                     </div>
                     <div class="col-lg-4">

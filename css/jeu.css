@@ -1,0 +1,13 @@
+body {
+	background-image:url(../img/spaceGame.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+canvas {
+	text-align: right;
+}
+
+.rules_game {
+	float: left;
+}

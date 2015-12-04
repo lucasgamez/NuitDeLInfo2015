@@ -53,6 +53,9 @@ if(isset($_GET['side'])) {
         echo '<link rel="icon" type="image/png" href="img/mchant_icon.png" />';
     }
     ?>
+    <!-- Centrer le jeu -->
+	<link rel="stylesheet" href="css/jeu.css">	
+	<script src="Shooter/phaser.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,6 +72,7 @@ if(isset($_GET['side'])) {
     ?>
 </head>
 <body>
+<div id="allSite" style="display:inline">
 <?php
 $filename = "menu.php";
 if (file_exists($filename)) include($filename);
@@ -128,7 +132,8 @@ if (file_exists($filename)) include($filename);
                         <h3> Comment ça marche ? </h3>
                         <p>
 Sais tu que de nombreuse personnes regardent ce que les gens écrivent sur les réseaux sociaux ? Ces personnes cherchent des informations utiles quand un événement grave se produit.
-En envoyant un message au bon endroit, on peut informer ces personnes qui vont ensuite s'organiser pour venir en aide aux personnes en danger.</p>
+En envoyant un message au bon endroit, on peut informer ces personnes qui vont ensuite s'organiser pour venir en aide aux personnes en danger.<button onclick="function(){document.r2d2.Play();}">Try it</button></p>
+                   
                     </div>
                     <div class="col-md-4">
                         <h3> Pourquoi utiliser les réseaux sociaux ? </h3>
@@ -234,6 +239,7 @@ Joue ton rôle de citoyen, aide les acteurs des secours en leur donnant des info
                
                 
             </div>
+            <a href="#" id="play2" onclick="launchGame()" class="btn tb-btn-bb">Jeu !</a>
         </div>
     </div>
 </div>
@@ -251,9 +257,29 @@ Joue ton rôle de citoyen, aide les acteurs des secours en leur donnant des info
         </div>
     </div>
 </div>
+    </div>
 
-
-
+<div id="game" style="display:none">
+        
+        <?php
+if($_COOKIE['side'] == 'light') {
+        $filename = "Shooter2/v4_clair/index_phaser.html";
+				if (file_exists($filename)) include($filename);
+                
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        $filename = "Shooter2/v4_obscur/index_phaser.html";
+				if (file_exists($filename)) include($filename);
+    }
+?>
+			
+			<?php
+				
+			?>
+			<p>
+				<img class="rules_game" src="Shooter/regle.png" alt="toucheJeu" />
+			</p>
+		</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -270,6 +296,11 @@ function compteclick() {
 		clics = 0;
 	}
 }
+    function launchGame(){
+		document.getElementById('allSite').style.display="none";
+		document.getElementById('game').style.display="inline";
+		start = true;
+	}
     
     $(document).ready(function () {
 
@@ -294,3 +325,7 @@ function compteclick() {
 </script>
 </body>
 </html>
+                   <embed type="audio/mp3" javascriptenabled="true" name="r2d2"
+		   autoplay="false" autostart="false"
+		  width=1 height=1
+          src="R2D2.mp3" bgsound>

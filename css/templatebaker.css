@@ -43,7 +43,8 @@ div.tb-content.img-side {
 }
 
 p {
- font-size:20px;   
+ font-size:20px;
+    text-align: justify;
 }
 
 h1 {

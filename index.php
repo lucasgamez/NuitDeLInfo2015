@@ -86,7 +86,7 @@ if (file_exists($filename)) include($filename);
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-                <a href="#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+                <a href="#what" class="btn tb-btn-bbg">MSGU</a>
             </div>
         </div>
             
@@ -172,7 +172,7 @@ if($_COOKIE['side'] == 'light') {
         </div>
     </div>
 </div>
-<div class="tb-content-bg" id="play">
+<div class="tb-content-bg" id="info">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">

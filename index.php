@@ -19,9 +19,11 @@ info@templatebaker.com
 if(isset($_GET['side'])) {
     if($_GET['side'] == 'light') {
         setcookie('side', 'light', time() + 365*24*3600, null, null, false, true);
+        $_COOKIE['side'] = 'light';
     }
     elseif($_GET['side'] == 'dark') {
         setcookie('side', 'dark', time() + 365*24*3600, null, null, false, true);
+        $_COOKIE['side'] = 'dark';
     }
 }
 ?>
@@ -33,7 +35,7 @@ if(isset($_GET['side'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Free Bootstrap Template</title>
+    <title>Nuit de l'info 2015</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link href="css/templatebaker.css" rel="stylesheet">
@@ -44,6 +46,17 @@ if(isset($_GET['side'])) {
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <?php
+    if($_COOKIE['side'] == 'light') {
+        echo '<link rel="stylesheet" href="css/light.css">';
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        echo '<link rel="stylesheet" href="css/dark.css">';
+    }
+    else {
+        echo '<link rel="stylesheet" href="css/neutral.css">';
+    }
+    ?>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">

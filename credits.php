@@ -46,6 +46,8 @@ info@templatebaker.com
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class="logo_menu"><a href="#"onclick="compteclick()"><img src="img/logo60.png" /></a></li>
+                        <li><a href="index.php">Accueil</a></li>
                         <li><a href="index.php?#what">Qu'est-ce que le MSGU ?</a></li>
                         <li><a href="index.php?#me">Moi et le MSGU</a></li>
                         <li><a href="index.php?#play">Les Jeux</a></li>

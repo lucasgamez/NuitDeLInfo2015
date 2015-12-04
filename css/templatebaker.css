@@ -33,6 +33,15 @@ ul.nav.navbar-nav > li {
     margin-right: 10px;
 }
 
+li.logo_menu a {
+    padding:1px;
+    margin:0;
+}
+
+div.tb-content.img-side {
+    padding:25px;
+}
+
 h1 {
     font-family: 'StarWars', sans-serif;
     text-transform: uppercase;

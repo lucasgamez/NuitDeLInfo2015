@@ -59,40 +59,23 @@ if(isset($_GET['side'])) {
     ?>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-						<li><a href="#"onclick="compteclick()"><img src="img/DarthVader.png" /></a></li>
-                        <li><a href="index.php?#what">Qu'est-ce que le MSGU ?</a></li>
-                        <li><a href="index.php?#me">Moi et le MSGU</a></li>
-                        <li><a href="index.php?#play">Les Jeux</a></li>
-                        <li><a href="credits.php">Crédits</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<?php
+$filename = "menu.php";
+if (file_exists($filename)) include($filename);
+?>
         
 
 <div id="tb-imagebg"></div>
 <div class="tb-content">
     <div class="container">
        <div class="row" style="text-align:center;">
-    <div class="col-md-4">
-        <a href="?side=light"><img src="img/sabre_light.png" /></a>
+    <div class="col-xs-4">
+        <a href="?side=light"><img class="img_light" src="img/sabre_light.png" /></a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xs-4">
         <h1>Ma bite.</h1></div>
-    <div class="col-md-4">
-        <a href="?side=dark"><img src="img/sabre_dark.png" /></a>
+    <div class="col-xs-4">
+        <a href="?side=dark"><img class="img_dark" src="img/sabre_dark.png" /></a>
     </div>
 </div>
             
@@ -101,17 +84,13 @@ if(isset($_GET['side'])) {
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-<<<<<<< HEAD
-                <a href="index.php?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
-=======
-                <a href="index.php?#msgu" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
->>>>>>> 223af11f6a01e3aefc3c0b7677526f480b659101
+                <a href="?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
             </div>
         </div>
             
     </div>
 </div>
-<div class="tb-content-bg" id="msgu">
+<div class="tb-content-bg" id="what">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -143,7 +122,17 @@ En envoyant un message au bon endroit, on peut informer ces personnes qui vont e
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2>It was popularised in the 1960s with the release of Letraset sheets containing Lorem</h2>
+<?php
+if($_COOKIE['side'] == 'light') {
+        echo '<img src="img/yoda.png" alt="" />';
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        echo '<img src="" alt="img/darkvador.png" />';
+    }
+    else {
+        echo '<img src="" alt="" />';
+    }
+?>
                 <a href="#" class="btn tb-btn-bbg">Learn More</a>
             </div>
         </div>
@@ -172,12 +161,21 @@ Toi aussi tu peux aider les gens. Ce n’est pas compliqué : il suffit de prend
         </div>
     </div>
 </div>
-<div class="tb-content">
+<div class="tb-content img-side">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2>It was popularised in the 1960s with the release of Letraset sheets containing Lorem</h2>
-                <a href="#" class="btn tb-btn-bbg">Learn More</a>
+<?php
+if($_COOKIE['side'] == 'light') {
+        echo '<img src="img/yoda.png" alt="" />';
+    }
+    elseif($_COOKIE['side'] == 'dark') {
+        echo '<img src="img/darkvador.png" alt="" />';
+    }
+    else {
+        echo '<img src="" alt="" />';
+    }
+?>
             </div>
         </div>
     </div>

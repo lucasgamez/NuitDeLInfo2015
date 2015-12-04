@@ -1,5 +1,37 @@
 /* Côté neutre */
 
 nav.navbar.navbar-inverse.navbar-fixed-top {
-    background-color:pink;
+    background-color:#666;
+}
+
+.img_light {
+-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.img_light:hover {
+  -webkit-transform: rotate(20deg);
+     -moz-transform: rotate(20deg);
+       -o-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.img_dark {
+-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.img_dark:hover {
+  -webkit-transform: rotate(20deg);
+     -moz-transform: rotate(20deg);
+       -o-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+          transform: rotate(20deg);
 }

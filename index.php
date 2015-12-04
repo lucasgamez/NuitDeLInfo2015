@@ -101,13 +101,13 @@ if(isset($_GET['side'])) {
                 
                 <span class="tb-underline-white"> </span>
                 <h3>LE site de référence en gestion d'urgence</h3>
-                <a href="index.html?#what" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
+                <a href="index.php?#msgu" class="btn tb-btn-bbg">Qu'est-ce que le MSGU ?</a>
             </div>
         </div>
             
     </div>
 </div>
-<div class="tb-content-bg" id="what">
+<div class="tb-content-bg" id="msgu">
     <div class="container">
                 <div class="row">
             <div class="col-lg-12 text-center">

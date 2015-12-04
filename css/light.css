@@ -64,3 +64,9 @@ ul.nav.navbar-nav > li > a:hover {
     border-right: 12px solid rgba(0, 111, 255, 0.61);
     border-bottom: 6px solid transparent; 
 }
+
+.tooltip-content {
+	background: #81d15a;
+    
+}
+

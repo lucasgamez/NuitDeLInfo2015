@@ -82,8 +82,8 @@ if (file_exists($filename)) include($filename);
     }
     elseif($_COOKIE['side'] == 'dark') {
         echo '<img src="img/mchant140.png" alt="Le guide" />';
-    }
-    ?>
+    }    ?>
+<span class="tooltip-content">Clic sur un laser pour choisir ton côté !</span>
     
 </div>
         
@@ -229,6 +229,8 @@ Joue ton rôle de citoyen, aide les acteurs des secours en leur donnant des info
 <p>Parmi les acteurs de cette citoyenneté, VISOV (Volontaires internationaux en soutien opérationnel virtuel) est une association qui aide pour l’organisation de gestion de crise. Elle récupère les informations disponibles sur les réseaux sociaux, les partage très vite à beaucoup de personnes afin de soutenir les populations sinistrées, et les rend utiles pour les autorités. L’association apporte également une assistance aux sinistrés, dicte des consignes à la population et .plein d’autre truc via les médias sociaux.</p>
 <p>Elle est composée de gens qui veulent aider bénévolement de secouristes, sapeurs-pompiers …</p>
                 </div>
+                
+
                
                 
             </div>
@@ -251,6 +253,8 @@ Joue ton rôle de citoyen, aide les acteurs des secours en leur donnant des info
 </div>
 
 
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -266,6 +270,27 @@ function compteclick() {
 		clics = 0;
 	}
 }
+    
+    $(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 700 && $(this).scrollTop() < 2700) {
+            $('.tooltip-content').html('Mais qu\'est-ce donc que ceci ? Le MSGU ?');
+        } else {
+            if ($(this).scrollTop() > 2700 && $(this).scrollTop() < 3700) {
+            $('.tooltip-content').html('Qu\'est-ce qui te relie au MSGU ?');
+            }
+            else {
+                if ($(this).scrollTop() > 3700) {
+                    $('.tooltip-content').html('Soif de savoir ? Voici les détails !');
+                }
+                else {
+                    $('.tooltip-content').html('Clic sur un laser pour choisir ton côté !');
+                }
+            }
+        }
+    });
+});
 </script>
 </body>
 </html>

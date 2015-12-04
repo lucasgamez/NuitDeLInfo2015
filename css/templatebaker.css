@@ -47,14 +47,7 @@ p {
     text-align: justify;
 }
 
-#follow_guide {
-    position:fixed;
-    top:150px;
-    left:10px;
-    width:140px;
-    height:140px;
-    background-color:black;
-}
+
 
 h1 {
     font-family: 'StarWars', sans-serif;
@@ -374,4 +367,115 @@ fieldset[disabled] .tb-btn-steps2:active,
 fieldset[disabled] .tb-btn-steps2.active {
     border-color: transparent;
     background-color: #f89291;
+}
+
+/* Gardien */
+
+
+.tooltip {
+	position: absolute;
+	z-index: 999;
+	width: 2.2em;
+	height: 2.2em;
+	cursor: pointer;
+}
+
+/* Trigger item */
+
+.tooltip-item {
+	width: 30px;
+	height: 30px;
+	left: 50%;
+	top: 50%;
+	margin: -15px 0 0 -15px;
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid #e35583;
+	-webkit-animation: pulse 0.6s infinite alternate;
+	animation: pulse 0.6s infinite alternate;
+    z-index:10;
+}
+
+@-webkit-keyframes pulse {
+	from { -webkit-transform: scale3d(0.5,0.5,1); }
+	to { -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes pulse {
+	from { -webkit-transform: scale3d(0.5,0.5,1); transform: scale3d(0.5,0.5,1); }
+	to { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+.tooltip:hover .tooltip-item {
+	border-color: #fff;
+        z-index:10;
+}
+
+.tooltip:first-child {
+	top: 20%;
+	left: 20%;
+}
+
+.tooltip:nth-child(2) {
+	top: 50%;
+	left: 10%;
+}
+
+.tooltip:nth-child(3) {
+	top: 40%;
+	left: 50%;
+}
+
+.tooltip:nth-child(4) {
+	top: 70%;
+	left: 70%;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+	position: absolute;
+	background: #e35583;
+	z-index: 9999;
+	width: 200px;
+	bottom: 50%;
+	margin-bottom: -1em;
+	padding: 20px;
+	border-radius: 20px;
+	font-size: 1.1em;
+	text-align: center;
+	color: #fff;
+	opacity: 1;
+	cursor: default;
+	pointer-events: none;
+	font-family: 'Gochi Hand', cursive;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+
+
+.tooltip:hover .tooltip-content {
+	opacity: 1;
+	-webkit-transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	pointer-events: auto;
+}
+
+#follow_guide {
+    position:fixed;
+    top:150px;
+    left:10px;
+    width:140px;
+    height:140px;
+    z-index: 4;
+}
+
+.tooltip-west .tooltip-content {
+	left: 4em;
+	-webkit-transform-origin: -2em 50%;
+	transform-origin: -2em 50%;
+	-webkit-transform: translate3d(0,50%,0) rotate3d(1,1,1,30deg);
+	transform: translate3d(0,50%,0) rotate3d(1,1,1,30deg);
 }

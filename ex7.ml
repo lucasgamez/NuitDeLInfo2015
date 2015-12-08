@@ -27,7 +27,7 @@
 											else (print_trace_step (TraceSome ls') n term) )
 ;;
 
-let affiche = fun n term ->
+(*let affiche = fun n term ->*)
 	
 (* Q10 *)	
 	let rec simp listRule tr term =

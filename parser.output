@@ -1,0 +1,460 @@
+   0  $accept : %entry% $end
+
+   1  start : RULES ruleList TRACE tracespec SIMP strategy termListAsTerm
+
+   2  id : CONST
+   3     | NAT
+   4     | VAR
+
+   5  constListCommaSep : CONST
+   6                    | CONST COMMA constListCommaSep
+
+   7  termList : term
+   8           | term termList
+
+   9  termListAsTerm : termList
+
+  10  termListCommaSep : termListAsTerm
+  11                   | termListAsTerm COMMA termListCommaSep
+
+  12  termListCommaSepAsTerm : termListCommaSep
+
+  13  term : id
+  14       | LPAREN termListCommaSepAsTerm RPAREN
+
+  15  ruleList : rule
+  16           | rule ruleList
+
+  17  rule : CONST COLON termListAsTerm ARROW termListAsTerm SEMICOLON
+  18       | termListAsTerm ARROW termListAsTerm SEMICOLON
+
+  19  tracespec : STAR SEMICOLON
+  20            | SEMICOLON
+  21            | constListCommaSep SEMICOLON
+
+  22  strategy : LSQPAREN CONST RSQPAREN
+
+  23  %entry% : '\001' start
+
+state 0
+	$accept : . %entry% $end  (0)
+
+	'\001'  shift 1
+	.  error
+
+	%entry%  goto 2
+
+
+state 1
+	%entry% : '\001' . start  (23)
+
+	RULES  shift 3
+	.  error
+
+	start  goto 4
+
+
+state 2
+	$accept : %entry% . $end  (0)
+
+	$end  accept
+
+
+state 3
+	start : RULES . ruleList TRACE tracespec SIMP strategy termListAsTerm  (1)
+
+	CONST  shift 5
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	ruleList  goto 9
+	termListAsTerm  goto 10
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+	rule  goto 14
+
+
+state 4
+	%entry% : '\001' start .  (23)
+
+	.  reduce 23
+
+
+state 5
+	id : CONST .  (2)
+	rule : CONST . COLON termListAsTerm ARROW termListAsTerm SEMICOLON  (17)
+
+	COLON  shift 15
+	CONST  reduce 2
+	VAR  reduce 2
+	NAT  reduce 2
+	LPAREN  reduce 2
+	ARROW  reduce 2
+
+
+state 6
+	id : VAR .  (4)
+
+	.  reduce 4
+
+
+state 7
+	id : NAT .  (3)
+
+	.  reduce 3
+
+
+state 8
+	term : LPAREN . termListCommaSepAsTerm RPAREN  (14)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 17
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+	termListCommaSep  goto 18
+	termListCommaSepAsTerm  goto 19
+
+
+state 9
+	start : RULES ruleList . TRACE tracespec SIMP strategy termListAsTerm  (1)
+
+	TRACE  shift 20
+	.  error
+
+
+state 10
+	rule : termListAsTerm . ARROW termListAsTerm SEMICOLON  (18)
+
+	ARROW  shift 21
+	.  error
+
+
+state 11
+	term : id .  (13)
+
+	.  reduce 13
+
+
+state 12
+	termListAsTerm : termList .  (9)
+
+	.  reduce 9
+
+
+state 13
+	termList : term .  (7)
+	termList : term . termList  (8)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	$end  reduce 7
+	RPAREN  reduce 7
+	COMMA  reduce 7
+	SEMICOLON  reduce 7
+	ARROW  reduce 7
+
+	id  goto 11
+	termList  goto 22
+	term  goto 13
+
+
+state 14
+	ruleList : rule .  (15)
+	ruleList : rule . ruleList  (16)
+
+	CONST  shift 5
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	TRACE  reduce 15
+
+	ruleList  goto 23
+	termListAsTerm  goto 10
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+	rule  goto 14
+
+
+state 15
+	rule : CONST COLON . termListAsTerm ARROW termListAsTerm SEMICOLON  (17)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 24
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+
+
+state 16
+	id : CONST .  (2)
+
+	.  reduce 2
+
+
+state 17
+	termListCommaSep : termListAsTerm .  (10)
+	termListCommaSep : termListAsTerm . COMMA termListCommaSep  (11)
+
+	COMMA  shift 25
+	RPAREN  reduce 10
+
+
+state 18
+	termListCommaSepAsTerm : termListCommaSep .  (12)
+
+	.  reduce 12
+
+
+state 19
+	term : LPAREN termListCommaSepAsTerm . RPAREN  (14)
+
+	RPAREN  shift 26
+	.  error
+
+
+state 20
+	start : RULES ruleList TRACE . tracespec SIMP strategy termListAsTerm  (1)
+
+	CONST  shift 27
+	SEMICOLON  shift 28
+	STAR  shift 29
+	.  error
+
+	tracespec  goto 30
+	constListCommaSep  goto 31
+
+
+state 21
+	rule : termListAsTerm ARROW . termListAsTerm SEMICOLON  (18)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 32
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+
+
+state 22
+	termList : term termList .  (8)
+
+	.  reduce 8
+
+
+state 23
+	ruleList : rule ruleList .  (16)
+
+	.  reduce 16
+
+
+state 24
+	rule : CONST COLON termListAsTerm . ARROW termListAsTerm SEMICOLON  (17)
+
+	ARROW  shift 33
+	.  error
+
+
+state 25
+	termListCommaSep : termListAsTerm COMMA . termListCommaSep  (11)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 17
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+	termListCommaSep  goto 34
+
+
+state 26
+	term : LPAREN termListCommaSepAsTerm RPAREN .  (14)
+
+	.  reduce 14
+
+
+state 27
+	constListCommaSep : CONST .  (5)
+	constListCommaSep : CONST . COMMA constListCommaSep  (6)
+
+	COMMA  shift 35
+	SEMICOLON  reduce 5
+
+
+state 28
+	tracespec : SEMICOLON .  (20)
+
+	.  reduce 20
+
+
+state 29
+	tracespec : STAR . SEMICOLON  (19)
+
+	SEMICOLON  shift 36
+	.  error
+
+
+state 30
+	start : RULES ruleList TRACE tracespec . SIMP strategy termListAsTerm  (1)
+
+	SIMP  shift 37
+	.  error
+
+
+state 31
+	tracespec : constListCommaSep . SEMICOLON  (21)
+
+	SEMICOLON  shift 38
+	.  error
+
+
+state 32
+	rule : termListAsTerm ARROW termListAsTerm . SEMICOLON  (18)
+
+	SEMICOLON  shift 39
+	.  error
+
+
+state 33
+	rule : CONST COLON termListAsTerm ARROW . termListAsTerm SEMICOLON  (17)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 40
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+
+
+state 34
+	termListCommaSep : termListAsTerm COMMA termListCommaSep .  (11)
+
+	.  reduce 11
+
+
+state 35
+	constListCommaSep : CONST COMMA . constListCommaSep  (6)
+
+	CONST  shift 27
+	.  error
+
+	constListCommaSep  goto 41
+
+
+state 36
+	tracespec : STAR SEMICOLON .  (19)
+
+	.  reduce 19
+
+
+state 37
+	start : RULES ruleList TRACE tracespec SIMP . strategy termListAsTerm  (1)
+
+	LSQPAREN  shift 42
+	.  error
+
+	strategy  goto 43
+
+
+state 38
+	tracespec : constListCommaSep SEMICOLON .  (21)
+
+	.  reduce 21
+
+
+state 39
+	rule : termListAsTerm ARROW termListAsTerm SEMICOLON .  (18)
+
+	.  reduce 18
+
+
+state 40
+	rule : CONST COLON termListAsTerm ARROW termListAsTerm . SEMICOLON  (17)
+
+	SEMICOLON  shift 44
+	.  error
+
+
+state 41
+	constListCommaSep : CONST COMMA constListCommaSep .  (6)
+
+	.  reduce 6
+
+
+state 42
+	strategy : LSQPAREN . CONST RSQPAREN  (22)
+
+	CONST  shift 45
+	.  error
+
+
+state 43
+	start : RULES ruleList TRACE tracespec SIMP strategy . termListAsTerm  (1)
+
+	CONST  shift 16
+	VAR  shift 6
+	NAT  shift 7
+	LPAREN  shift 8
+	.  error
+
+	termListAsTerm  goto 46
+	id  goto 11
+	termList  goto 12
+	term  goto 13
+
+
+state 44
+	rule : CONST COLON termListAsTerm ARROW termListAsTerm SEMICOLON .  (17)
+
+	.  reduce 17
+
+
+state 45
+	strategy : LSQPAREN CONST . RSQPAREN  (22)
+
+	RSQPAREN  shift 47
+	.  error
+
+
+state 46
+	start : RULES ruleList TRACE tracespec SIMP strategy termListAsTerm .  (1)
+
+	.  reduce 1
+
+
+state 47
+	strategy : LSQPAREN CONST RSQPAREN .  (22)
+
+	.  reduce 22
+
+
+19 terminals, 14 nonterminals
+24 grammar rules, 48 states

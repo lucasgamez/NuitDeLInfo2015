@@ -64,4 +64,25 @@ rules
 	ite1: if 1 X Y -> X;
 	ite2: if 0 X Y -> Y;
 
+// Inférieur
 
+rules
+  inf0: X 0 -> 1;
+  inf1: 0 X -> 0;
+  inf2: inf 0 0 -> 0;
+  infs: (succ X) (succ Y) -> inf X Y;
+  
+trace *;
+
+simp [left_outer] inf 3 4
+
+// Egal
+rules
+  eg0: eg 0 0 -> 1;
+  eg1: eg Y 0 -> 0;
+  eg2: eg 0 Y -> 0;
+  egs: (succ X) (succ Y) -> eg X Y;
+  
+trace *;
+
+simp [left_outer] eg 4 4

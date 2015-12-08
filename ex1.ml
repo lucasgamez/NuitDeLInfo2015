@@ -11,9 +11,9 @@ simp [left_outer]   add 2 5;
 // Soustraction
 
 rules
-  moins1: X 0 -> X;
-  moins1: 0 X -> X;
-  moins2: succ(X) succ(Y) -> moins X Y;
+  moins1: sub X 0 -> X;
+  moins1: sub 0 X -> 0;
+  moins2: sub(succ(X) succ(Y)) -> sub X Y;
 
 trace *;
 
@@ -22,20 +22,46 @@ simp [left_outer]   moins 5 2;
 
 // Multiplication
 
-rules
-  fois1: 0 X -> 0;
-  fois2: X 0 -> 0;
-  fois3: X Y -> fois X Y Y;
-  
-  foiss1: 0 Y Z -> 0;
-  foiss2: X 0 Z -> 0;
-  foiss: succ(X) Y Z -> fois X add(Z Y) Z;
 
+rules
+	mul1: mul 0 X -> 0;
+	mul2: mul X 0 -> 0;
+	mul3: mul X succ(Y) -> add X (mul X Y);
+
+rules
+	div1: div 0 X -> 0;
+	divs: div X Y -> succ(div (sub X Y) Y);
+	
 trace *;
 
 simp [left_outer]   fois 2 5;
 
+// ET
+ 
 rules
-  inf1: X 0 -> X;
-  inf1: 0 X -> X;
-  inf2: succ(X) succ(Y) -> 
+	et1: 0 0 -> 0;
+	et2: 0 1 -> 0;
+	et3: 1 0 -> 0;
+	et4: 1 1 -> 1;
+	
+// OU
+
+rules
+	ou1: 0 0 -> 0;
+	ou2: 0 1 -> 1;
+	ou3: 1 0 -> 1;
+	ou4: 1 1 -> 1;
+
+// NOT 
+
+rules
+	not1: 0 -> 1;
+	not2: 1 -> 0;
+	
+// IF THEN ELSE
+
+rules
+	ite1: if 1 X Y -> X;
+	ite2: if 0 X Y -> Y;
+
+

@@ -34,10 +34,16 @@ simp [left_outer]   fois 2 5;
 // Inférieur
 
 rules
-  inf0: X 0 -> 1;
-  inf1: 0 X -> 0;
+  inf0: inf X 0 -> 1;
+  inf1: inf 0 X -> 0;
   inf2: inf 0 0 -> 0;
-  infs: (succ X) (succ Y) -> inf X Y;
+  infs: inf (succ X) (succ Y) -> inf X Y;
+  
+rules
+  sup0: sup X 0 -> 0;
+  sup1: sup 0 X -> 1;
+  sup2: sup 0 0 -> 0;
+  sups: sup (succ X) (succ Y) -> sup X Y;
   
 trace *;
 
@@ -48,7 +54,7 @@ rules
   eg0: eg 0 0 -> 1;
   eg1: eg Y 0 -> 0;
   eg2: eg 0 Y -> 0;
-  egs: (succ X) (succ Y) -> eg X Y;
+  egs: eg (succ X) (succ Y) -> eg X Y;
   
 trace *;
 

@@ -23,9 +23,13 @@ simp [left_outer]   moins 5 2;
 // Multiplication
 
 rules
-  fois1: X 0 -> X;
-  fois1: 0 X-> X;
-  fois2: succ(X) succ(Y) -> fois X Y;
+  fois1: 0 X -> 0;
+  fois2: X 0 -> 0;
+  fois3: X Y -> fois X Y Y;
+  
+  foiss1: 0 Y Z -> 0;
+  foiss2: X 0 Z -> 0;
+  foiss: succ(X) Y Z -> fois X add(Z Y) Z;
 
 trace *;
 
